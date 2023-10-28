@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="w-small w-2/3 mx-auto py-10 text-gray-600">
+  <h3 >
+    Search Contacts
+    <span class="htmx-indicator" class="opacity-0 font-semibold mt-8 m-0 p-0 box-border block">
+      <img src="/static/images/bars.svg" /> Searching...
+    </span>
+  </h3>
+  <input class="form-control" type="text" name="search" placeholder="Begin Typing To Search Users..." hx-post="/search"
+    hx-trigger="keyup changed delay:500ms" hx-target="#search-results" hx-indicator=".htmx-indicator"
+    class="bg-white h-10 px-5 pr-10 rounded-full text-2xl focus:outline-none">
+</div>
+
+<table class="border-collapse w-small w-2/3 mx-auto">
+  <thead>
+    <tr>
+      <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">ID</th>
+      <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">First
+        Name</th>
+      <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Last
+        Name</th>
+      <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Email
+      </th>
+    </tr>
+  </thead>
+
+  <tbody id="search-results">
+    {% include 'search.html' %}
+  </tbody>
+
+</table>
+
+{% endblock content %}
