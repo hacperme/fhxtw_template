@@ -58,10 +58,10 @@ def index():
 @app.route("/search", methods=["POST"])
 def search():
     word = request.form.get("search")
-    if (word is None):
+    if (word is None or word == ""):
         return render_template("search.html", users=[])
     else:
         return render_template("search.html", users=filter(lambda u: u.search(word), users))
-
+    
 if __name__ == "__main__":
     app.run(debug=True)
