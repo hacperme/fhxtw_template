@@ -1,6 +1,6 @@
-## Flask + Htmlx + Tailwind CSS 程序模板
+## Flask + Htmlx + daisyUI 程序模板
 
-使用 Flask Htmlx 和 Tailwind CSS 搭建一个简单的 web 全栈开发环境。
+使用 Flask Htmlx Tailwind CSS 和 daisyUI 搭建一个简单的 web 全栈开发环境。
 
 ## 使用步骤
 
@@ -18,16 +18,16 @@ source venv/bin/activate # or
 pip install -r requirements.txt
 ```
 
-初始化 tailwindcss
+安装 Tailwind CSS 和 daisyUI
 
 ```bash
-tailwindcss
+npm install
 ```
 
 使用 tailwindcss 生成 CSS
 
 ```bash
-tailwindcss -i ./static/src/main.css -o ./static/dist/main.css --minify
+npx tailwindcss -i ./static/src/main.css -o ./static/dist/main.css --minify
 ```
 
 运行
